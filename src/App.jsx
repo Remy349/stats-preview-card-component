@@ -1,6 +1,7 @@
 import React from 'react'
 import { Stats } from './components/Stats'
 import headerDesktop from './images/image-header-desktop.jpg'
+import headerMobile from './images/image-header-mobile.jpg'
 
 function App () {
   return (
@@ -31,6 +32,7 @@ function App () {
         </div>
         <div className='stats__card-image'>
           <picture>
+            <source media='(max-width:1000px)' srcSet={headerMobile} />
             <img
               className='stats__card-image_img'
               src={headerDesktop}
