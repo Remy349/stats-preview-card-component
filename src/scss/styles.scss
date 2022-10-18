@@ -1,5 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap');
+
+$inter: 'Inter', sans-serif;
+$lexend: 'Lexend Deca', sans-serif;
+
+//-> Primary
+
+//main background
+$Very-dark-blue: hsl(233, 47%, 7%);
+//card background
+$Dark-desaturated-blue: hsl(244, 38%, 16%);
+//accent
+$Soft-violet: hsl(277, 64%, 61%);
+
+//-> Neutral
+
+//(main heading, stats)
+$White : hsl(0, 0%, 100%);
+//main paragraph
+$Slightly-transparent-white-paragraph: hsla(0, 0%, 100%, 0.75);
+//stat headings
+$Slightly-transparent-white-stat: hsla(0, 0%, 100%, 0.6);
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  background-color: $Very-dark-blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: $inter;
+}
+
+.stats {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1000px;
+
+  &__card {
+    border-radius: .5rem;
+    background-color: $Dark-desaturated-blue;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    &-content {
+      padding: 4rem 6rem 4rem 4rem;
+
+      &_title {
+        color: $White;
+        margin-bottom: 1.5rem;
+
+        & span {
+          color: $Soft-violet;
+        }
+      }
+
+      &_desc{
+        color: $Slightly-transparent-white-paragraph;
+        font-size: .9rem;
+        line-height: 1.5;
+        margin-bottom: 4rem;
+      }
+
+      &_info {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        &_value {
+          font-weight: 700;
+          font-size: 1.4rem;
+          text-transform: uppercase;
+          color: $White;
+        }
+
+        &_text {
+          text-transform: uppercase;
+          color: $Slightly-transparent-white-stat;
+          font-family: $lexend;
+          font-size: .8rem;
+          letter-spacing: .05rem;
+        }
+      }
+    }
+
+    &-image {
+      position: relative;
+
+      &::after {
+        content: '';
+        background-color: $Soft-violet;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-top-right-radius: .5rem;
+        border-bottom-right-radius: .5rem;
+        height: 100%;
+        width: 100%;
+        mix-blend-mode: multiply;
+      }
+
+      &_img {
+        display: block;
+        border-top-right-radius: .5rem;
+        border-bottom-right-radius: .5rem;
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+}
+

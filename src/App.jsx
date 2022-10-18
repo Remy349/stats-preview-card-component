@@ -31,7 +31,11 @@ function App () {
         </div>
         <div className='stats__card-image'>
           <picture>
-            <img src={headerDesktop} alt='Image header desktop' />
+            <img
+              className='stats__card-image_img'
+              src={headerDesktop}
+              alt='Image header desktop'
+            />
           </picture>
         </div>
       </div>
